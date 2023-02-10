@@ -1,4 +1,5 @@
 {
   "testTranslate": "Тестовый перевод",
-  "language": "Русский"
+  "language": "Русский",
+  "pageNotFound": "Страница не найдена"
 }

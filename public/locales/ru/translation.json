@@ -1,5 +1,8 @@
 {
   "testTranslate": "Тестовый перевод",
   "language": "Русский",
-  "pageNotFound": "Страница не найдена"
+  "pageNotFound": "Страница не найдена",
+  "unexpectedError": "Произошла непредвиденная ошибка",
+  "refreshPage": "Обновить страницу",
+  "throwError": "Выбросить ошибку"
 }

@@ -1,5 +1,8 @@
 {
   "testTranslate": "Test translate",
   "language": "English",
-  "pageNotFound": "Page not found"
+  "pageNotFound": "Page not found",
+  "unexpectedError": " An unexpected error occurred",
+  "refreshPage": "Refresh the page",
+  "throwError": "Throw error"
 }

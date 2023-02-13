@@ -4,5 +4,6 @@
   "pageNotFound": "Страница не найдена",
   "unexpectedError": "Произошла непредвиденная ошибка",
   "refreshPage": "Обновить страницу",
-  "throwError": "Выбросить ошибку"
+  "throwError": "Выбросить ошибку",
+  "toggle": "Toggle"
 }

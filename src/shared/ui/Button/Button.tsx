@@ -3,7 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Button.module.scss';
 
 export enum ThemeButton {
-  CLEAR = 'clear'
+  CLEAR = 'clear',
+  OUTLINE = 'outline'
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,7 +13,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<ButtonProps> = ({
-  className, children, theme = ThemeButton.CLEAR, ...otherProps
+  className, children, theme, ...otherProps
 }) => (
   <button
     type="button"

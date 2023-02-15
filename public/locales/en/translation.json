@@ -5,5 +5,7 @@
   "unexpectedError": " An unexpected error occurred",
   "refreshPage": "Refresh the page",
   "throwError": "Throw error",
-  "toggle": "Toggle"
+  "aboutPage": "About page",
+  "mainPage": "Main page",
+  "shortLanguage": "En"
 }

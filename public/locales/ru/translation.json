@@ -5,5 +5,7 @@
   "unexpectedError": "Произошла непредвиденная ошибка",
   "refreshPage": "Обновить страницу",
   "throwError": "Выбросить ошибку",
-  "toggle": "Toggle"
+  "aboutPage": "О сайте",
+  "mainPage": "Главная страница",
+  "shortLanguage": "Ру"
 }

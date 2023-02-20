@@ -7,5 +7,7 @@
   "throwError": "Выбросить ошибку",
   "aboutPage": "О сайте",
   "mainPage": "Главная страница",
-  "shortLanguage": "Ру"
+  "shortLanguage": "Ру",
+  "logIn": "Войти",
+  "lorem": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eligendi dolor explicabo labore possimus culpa velit molestias totam, deserunt, mollitia beatae neque doloremque dolore, minima vel dicta inventore commodi sint."
 }

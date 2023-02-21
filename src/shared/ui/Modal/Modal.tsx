@@ -1,4 +1,3 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
@@ -20,12 +19,10 @@ export const Modal = ({
 }: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
 
   const mods: Record<string, boolean> = {
     [classes.opened]: isOpen,
     [classes.isClosing]: isClosing,
-    [classes[theme]]: true,
   };
 
   const closeHandler = useCallback(() => {

@@ -11,5 +11,8 @@
   "logIn": "Log in",
   "lorem": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eligendi dolor explicabo labore possimus culpa velit molestias totam, deserunt, mollitia beatae neque doloremque dolore, minima vel dicta inventore commodi sint.",
   "enterUsername": "Enter username",
-  "enterPassword": "Enter password"
+  "enterPassword": "Enter password",
+  "authorizationForm": "Authorization form",
+  "invalidLoginOrPassword": "Invalid login or password",
+  "logOut": "Log out"
 }

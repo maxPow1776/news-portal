@@ -14,5 +14,6 @@
   "enterPassword": "Enter password",
   "authorizationForm": "Authorization form",
   "invalidLoginOrPassword": "Invalid login or password",
-  "logOut": "Log out"
+  "logOut": "Log out",
+  "profilePage": "Profile page"
 }

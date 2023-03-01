@@ -16,7 +16,7 @@ export default {
   // cacheDirectory: "C:\\Users\\Maksim\\AppData\\Local\\Temp\\jest",
 
   // A set of global variables that need to be available in all test environments
-  globals: { __IS_DEV__: true },
+  globals: { __IS_DEV__: true, __API__: '' },
 
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,

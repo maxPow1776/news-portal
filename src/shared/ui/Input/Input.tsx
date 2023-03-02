@@ -1,5 +1,5 @@
 import React, {
-  InputHTMLAttributes, memo, useEffect, useRef, useState,
+  InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Input.module.scss';
@@ -18,7 +18,7 @@ export const Input = memo(({
 }: InputProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const [carriagePosition, setCarriagePosition] = useState(0);
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef() as MutableRefObject<HTMLInputElement>;
 
   useEffect(() => {
     if (autofocus) {

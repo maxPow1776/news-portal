@@ -15,5 +15,7 @@
   "authorizationForm": "Authorization form",
   "invalidLoginOrPassword": "Invalid login or password",
   "logOut": "Log out",
-  "profilePage": "Profile page"
+  "profilePage": "Profile page",
+  "yourCurrency": "Your currency",
+  "yourCountry": "Your country"
 }

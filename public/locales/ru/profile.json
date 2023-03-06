@@ -2,5 +2,13 @@
   "profile": "Профиль",
   "edit": "Редактировать",
   "yourName": "Ваше имя",
-  "yourLastname": "Ваша фамилия"
+  "yourLastname": "Ваша фамилия",
+  "yourAge": "Ваш возраст",
+  "yourCity": "Ваш город",
+  "yourUsername": "Ваше мя пользователя",
+  "yourAvatar": "Ваш аватар",
+  "errorUploadProfile": "Произошла ошибка при загрузке профиля",
+  "refreshPage": "Попробуйте обновить страницу",
+  "cancel": "Отменить",
+  "save": "Сохранить"
 }

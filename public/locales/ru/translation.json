@@ -15,5 +15,7 @@
   "authorizationForm": "Форма авторизации",
   "invalidLoginOrPassword": "Неверный логин или пароль",
   "logOut": "Выйти",
-  "profilePage": "Страница пользователя"
+  "profilePage": "Страница пользователя",
+  "yourCurrency": "Ваша валюта",
+  "yourCountry": "Ваша страна"
 }

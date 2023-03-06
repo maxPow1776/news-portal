@@ -1,24 +1,27 @@
 import React, {
   InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import classes from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo(({
-  className, value, onChange, type = 'text', placeholder, autofocus, ...otherProps
+  className, value, onChange, type = 'text', placeholder, autofocus, readonly, ...otherProps
 }: InputProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const [carriagePosition, setCarriagePosition] = useState(0);
   const ref = useRef() as MutableRefObject<HTMLInputElement>;
+
+  const isCarriageVisible = isFocused && !readonly;
 
   useEffect(() => {
     if (autofocus) {
@@ -44,8 +47,12 @@ export const Input = memo(({
     setCarriagePosition(e?.target?.selectionStart || 0);
   };
 
+  const mods: Mods = {
+    [classes.readonly]: readonly,
+  };
+
   return (
-    <div className={classNames(classes.inputWrapper, {}, [className])}>
+    <div className={classNames(classes.inputWrapper, mods, [className])}>
       {placeholder && (
         <div className={classes.placeholder}>
           {`${placeholder}>`}
@@ -62,8 +69,9 @@ export const Input = memo(({
           onFocus={onFocus}
           onBlur={onBlur}
           onSelect={onSelect}
+          readOnly={readonly}
         />
-        {isFocused && <span className={classes.carriage} style={{ left: `${carriagePosition * 8.8}px` }} />}
+        {isCarriageVisible && <span className={classes.carriage} style={{ left: `${carriagePosition * 8.8}px` }} />}
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import {
-  fetchProfileData, getProfileData, getProfileError,
-  getProfileForm,
-  getProfileIsLoading, getProfileReadonly, profileActions, ProfileCard, profileReducer,
+  fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors,
+  profileActions, ProfileCard, profileReducer, ValidateProfileError,
 } from 'entities/Profile';
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { TextTheme, Text } from 'shared/ui/Text/Text';
 import { PorfilePageHeader } from './PorfilePageHeader/PorfilePageHeader';
 
 const reducer: ReducersList = {
@@ -18,12 +18,21 @@ const reducer: ReducersList = {
 };
 
 const ProfilePage = memo(() => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorsTranslate = {
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('incorrectUserData'),
+    [ValidateProfileError.INCORRECT_AGE]: t('incorrectAge'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('incorrectCountry'),
+    [ValidateProfileError.NO_DATA]: t('noData'),
+    [ValidateProfileError.SERVER_ERROR]: t('ServerError'),
+  };
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -65,6 +74,9 @@ const ProfilePage = memo(() => {
     <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
       <div className={classNames('', {}, [])}>
         <PorfilePageHeader />
+        {validateErrors?.length && validateErrors.map((err) => (
+          <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslate[err]} />
+        ))}
         <ProfileCard
           data={formData}
           isLoading={isLoading}

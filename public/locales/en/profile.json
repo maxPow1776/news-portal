@@ -10,5 +10,10 @@
   "errorUploadProfile": "An error occurred while loading the profile",
   "refreshPage": "Try refreshing the page",
   "cancel": "Cancel",
-  "save": "Save"
+  "save": "Save",
+  "incorrectUserData": "Incorrect user data",
+  "incorrectAge": "Incorrect age",
+  "incorrectCountry": "Incorrect country",
+  "noData": "No data",
+  "ServerError": "Server error"
 }

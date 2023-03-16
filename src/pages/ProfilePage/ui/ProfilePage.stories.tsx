@@ -4,7 +4,6 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/test/testAvatar.png';
 
 import ProfilePage from './ProfilePage';
 
@@ -30,7 +29,7 @@ Light.decorators = [StoreDecorator({
       username: 'username',
       city: 'city',
       currency: Currency.RUB,
-      avatar,
+      avatar: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png',
     },
   },
 })];
@@ -47,7 +46,7 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
       username: 'username',
       city: 'city',
       currency: Currency.RUB,
-      avatar,
+      avatar: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png',
     },
   },
 })];

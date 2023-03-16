@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/test/testAvatar.png';
 
 import { ProfileCard } from './ProfileCard';
 
@@ -25,7 +24,7 @@ Primary.args = {
     username: 'username',
     city: 'city',
     currency: Currency.RUB,
-    avatar,
+    avatar: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png',
   },
 };
 

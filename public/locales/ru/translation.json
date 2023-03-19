@@ -18,5 +18,6 @@
   "profilePage": "Страница пользователя",
   "articlePage": "Страница статей",
   "yourCurrency": "Ваша валюта",
-  "yourCountry": "Ваша страна"
+  "yourCountry": "Ваша страна",
+  "noComments": "Комментарии отсутствуют"
 }

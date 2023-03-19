@@ -1,5 +1,6 @@
 {
   "articlesPage": "Страница статей",
   "articleNotFound": "Статья не найдена",
-  "errorWhileLoadingPage": "Произошла ошибка при загрузке страницы"
+  "errorWhileLoadingPage": "Произошла ошибка при загрузке страницы",
+  "comments": "Комментарии"
 }

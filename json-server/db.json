@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test comment",
+      "id": "cymC5XJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test comment",
+      "id": "Zcd7ybp"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user test comment",
+      "id": "6tfDnWI"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hello world",
+      "id": "S6trYpZ"
     }
   ],
   "users": [
@@ -118,14 +144,28 @@
       "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
     }
   ],
-  "profile": {
-    "first": "firstname",
-    "lastname": "lastname",
-    "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "firstname",
+      "lastname": "lastname",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
+    },
+    {
+      "id": "2",
+      "first": "firstname",
+      "lastname": "lastname",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
+    }
+  ]
 }

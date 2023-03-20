@@ -19,5 +19,7 @@
   "articlePage": "Articles page",
   "yourCurrency": "Your currency",
   "yourCountry": "Your country",
-  "noComments": "No comments"
+  "noComments": "No comments",
+  "enterTextComment": "Enter text comment",
+  "send": "Send"
 }

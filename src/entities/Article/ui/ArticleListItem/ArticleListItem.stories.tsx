@@ -1,20 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
+import {
+  Article, ArticleBlockType, ArticleType, ArticleView,
+} from '../../model/types/article';
 
-import { ArticleDetails } from './ArticleDetails';
-
-export default {
-  title: 'entities/ArticleDetails',
-  component: ArticleDetails,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof ArticleDetails>;
-
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+import { ArticleListItem } from './ArticleListItem';
 
 const article: Article = {
   id: '1',
@@ -26,6 +17,7 @@ const article: Article = {
   user: {
     id: '1',
     username: 'username',
+    avatar: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png',
   },
   type: [ArticleType.IT],
   blocks: [
@@ -90,34 +82,38 @@ const article: Article = {
   ],
 };
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
+export default {
+  title: 'entities/Article/ArticleListItem',
+  component: ArticleListItem,
+  argTypes: {
+    backgroundColor: { control: 'color' },
   },
-})];
+} as ComponentMeta<typeof ArticleListItem>;
 
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-})];
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
-export const Loading = Template.bind({});
-Loading.args = {};
-Loading.decorators = [StoreDecorator({
-  articleDetails: {
-    isLoading: true,
-  },
-})];
+export const Big = Template.bind({});
+Big.args = {
+  view: ArticleView.BIG,
+  article,
+};
 
-export const Error = Template.bind({});
-Error.args = {};
-Error.decorators = [StoreDecorator({
-  articleDetails: {
-    error: 'error',
-  },
-})];
+export const BigDark = Template.bind({});
+BigDark.args = {
+  view: ArticleView.BIG,
+  article,
+};
+BigDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Small = Template.bind({});
+Small.args = {
+  view: ArticleView.SMALL,
+  article,
+};
+
+export const SmallDark = Template.bind({});
+SmallDark.args = {
+  view: ArticleView.SMALL,
+  article,
+};
+SmallDark.decorators = [ThemeDecorator(Theme.DARK)];

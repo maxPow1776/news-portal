@@ -3,5 +3,6 @@
   "articleNotFound": "Статья не найдена",
   "errorWhileLoadingPage": "Произошла ошибка при загрузке страницы",
   "comments": "Комментарии",
-  "backToList": "Обратно к списку"
+  "backToList": "Обратно к списку",
+  "anErrorOccurredWhileLoadingArticles": "Произошла ошибка при загрузке статей"
 }

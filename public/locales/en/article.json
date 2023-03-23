@@ -3,5 +3,6 @@
   "articleNotFound": "Article not found",
   "errorWhileLoadingPage": "An error occurred while loading the page",
   "comments": "Comments",
-  "backToList": "Back to list"
+  "backToList": "Back to list",
+  "anErrorOccurredWhileLoadingArticles": " An error occurred while loading articles"
 }

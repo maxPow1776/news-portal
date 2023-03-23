@@ -12,6 +12,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
 import { PorfilePageHeader } from './PorfilePageHeader/PorfilePageHeader';
 
@@ -77,7 +78,7 @@ const ProfilePage = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
-      <div className={classNames('', {}, [])}>
+      <Page className={classNames('', {}, [])}>
         <PorfilePageHeader />
         {validateErrors?.length && validateErrors.map((err) => (
           <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslate[err]} />
@@ -96,7 +97,7 @@ const ProfilePage = memo(() => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });

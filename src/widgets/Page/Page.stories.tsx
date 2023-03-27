@@ -6,7 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Page } from './Page';
 
 export default {
-  title: 'Page',
+  title: 'widgets/Page',
   component: Page,
   argTypes: {
     backgroundColor: { control: 'color' },

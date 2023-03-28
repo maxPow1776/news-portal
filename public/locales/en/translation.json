@@ -22,5 +22,17 @@
   "noComments": "No comments",
   "enterTextComment": "Enter text comment",
   "send": "Send",
-  "readMore": "Read more..."
+  "readMore": "Read more...",
+  "sortBy": "Sort by",
+  "search": "Search",
+  "by": "by",
+  "ascending": "ascending",
+  "descending": "descending",
+  "creationDate": "creation date",
+  "views": "views",
+  "title": "title",
+  "it": "IT",
+  "all": "All",
+  "economics": "Economics",
+  "science": "Science"
 }

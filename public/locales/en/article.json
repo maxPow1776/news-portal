@@ -4,5 +4,6 @@
   "errorWhileLoadingPage": "An error occurred while loading the page",
   "comments": "Comments",
   "backToList": "Back to list",
-  "anErrorOccurredWhileLoadingArticles": " An error occurred while loading articles"
+  "anErrorOccurredWhileLoadingArticles": " An error occurred while loading articles",
+  "articlesNotFound": "Articles not found"
 }

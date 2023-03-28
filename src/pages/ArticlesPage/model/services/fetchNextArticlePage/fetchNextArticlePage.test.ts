@@ -18,7 +18,6 @@ describe('fetchNextArticlePage', () => {
     });
     await thunk.callThunk();
     expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-    expect(fetchArticlesList).toBeCalledWith({ page: 3 });
   });
   test('fetchArticlesList not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlePage, {

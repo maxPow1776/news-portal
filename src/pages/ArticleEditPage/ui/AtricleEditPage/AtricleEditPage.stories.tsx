@@ -3,7 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 
-import { AtricleEditPage } from './AtricleEditPage';
+import AtricleEditPage from './AtricleEditPage';
 
 export default {
   title: 'AtricleEditPage',

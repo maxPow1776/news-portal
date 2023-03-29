@@ -34,5 +34,8 @@
   "it": "IT",
   "all": "All",
   "economics": "Economics",
-  "science": "Science"
+  "science": "Science",
+  "edit": "Edit",
+  "appName": "App name",
+  "createArticle": "Create article"
 }

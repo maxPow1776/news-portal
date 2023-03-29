@@ -34,5 +34,8 @@
   "it": "IT",
   "all": "Все",
   "economics": "Экономика",
-  "science": "Наука"
+  "science": "Наука",
+  "edit": "Редактировать",
+  "appName": "App name",
+  "createArticle": "Создать статью"
 }

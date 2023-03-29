@@ -16,7 +16,7 @@ export interface PorfilePageHeaderProps {
 }
 
 export const PorfilePageHeader = ({ className }: PorfilePageHeaderProps) => {
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation(['profile', 'translation']);
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
@@ -43,7 +43,7 @@ export const PorfilePageHeader = ({ className }: PorfilePageHeaderProps) => {
           {readonly
             ? (
               <Button className={classes.editButton} theme={ButtonTheme.OUTLINE} onClick={onEdit}>
-                {t('edit')}
+                {t('edit', { ns: 'translation' })}
               </Button>
             )
             : (

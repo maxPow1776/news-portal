@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
-import classes from './PorfilePageHeader.module.scss';
 
 export interface PorfilePageHeaderProps {
   className?: string;
@@ -36,28 +36,28 @@ export const PorfilePageHeader = ({ className }: PorfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(classes.porfilePageHeader, {}, [className])}>
+    <HStack justify="between" max className={classNames('', {}, [className])}>
       <Text title={t('profile')} />
       {canEdit && (
-        <div className={classes.buttonsWrapper}>
+        <div>
           {readonly
             ? (
-              <Button className={classes.editButton} theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+              <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
                 {t('edit', { ns: 'translation' })}
               </Button>
             )
             : (
-              <>
-                <Button className={classes.editButton} theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
+              <HStack gap="8">
+                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
                   {t('cancel')}
                 </Button>
-                <Button className={classes.saveButton} theme={ButtonTheme.OUTLINE} onClick={onSave}>
+                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
                   {t('save')}
                 </Button>
-              </>
+              </HStack>
             )}
         </div>
       )}
-    </div>
+    </HStack>
   );
 };

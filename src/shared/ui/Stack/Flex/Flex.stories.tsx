@@ -14,7 +14,7 @@ const children = (
 );
 
 export default {
-  title: 'Flex',
+  title: 'shared/Flex',
   component: Flex,
   argTypes: {
     backgroundColor: { control: 'color' },

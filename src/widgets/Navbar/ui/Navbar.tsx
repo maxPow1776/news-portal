@@ -8,6 +8,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -15,7 +17,7 @@ interface NavbarProps {
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['translation', 'profile']);
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
@@ -39,9 +41,15 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
           {t('createArticle')}
         </AppLink>
-        <Button theme={ButtonTheme.CLEAR_INVERTED} className={classes.links} onClick={onLogout}>
-          {t('logOut')}
-        </Button>
+        <Dropdown
+          className={classes.dropdown}
+          direction="bottom left"
+          trigger={<Avatar size={30} src={authData.avatar} />}
+          items={[
+            { content: t('profile', { ns: 'profile' }), href: RoutePath.profile + authData.id },
+            { content: t('logOut'), onClick: onLogout },
+          ]}
+        />
       </header>
     );
   }

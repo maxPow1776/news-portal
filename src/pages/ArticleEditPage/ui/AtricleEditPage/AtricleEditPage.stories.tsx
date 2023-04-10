@@ -6,7 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import AtricleEditPage from './AtricleEditPage';
 
 export default {
-  title: 'AtricleEditPage',
+  title: 'pages/ArticleEditPage/AtricleEditPage',
   component: AtricleEditPage,
   argTypes: {
     backgroundColor: { control: 'color' },

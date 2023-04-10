@@ -14,5 +14,6 @@
   "incorrectAge": "Incorrect age",
   "incorrectCountry": "Incorrect country",
   "noData": "No data",
-  "ServerError": "Server error"
+  "ServerError": "Server error",
+  "profileNotFound": "Profile not found"
 }

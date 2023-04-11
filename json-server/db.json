@@ -596,14 +596,21 @@
       "id": "1",
       "username": "admin",
       "password": "admin",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "user",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "manager",
+      "roles": ["MANAGER"],
       "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
     }
   ],

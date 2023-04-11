@@ -37,5 +37,7 @@
   "science": "Science",
   "edit": "Edit",
   "appName": "App name",
-  "createArticle": "Create article"
+  "createArticle": "Create article",
+  "adminPanel": "Admin panel",
+  "accessIsDenied": "Access is denied"
 }

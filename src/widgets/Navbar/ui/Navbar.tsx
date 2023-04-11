@@ -1,4 +1,6 @@
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +23,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -34,6 +38,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
+  const isAdminPanelAvailable = isAdmin || isManager;
+
   if (authData) {
     return (
       <header className={classNames(classes.navbar, {}, [className])}>
@@ -46,6 +52,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           direction="bottom left"
           trigger={<Avatar size={30} src={authData.avatar} />}
           items={[
+            ...(isAdminPanelAvailable
+              ? [{ content: t('adminPanel'), href: RoutePath.admin_panel }]
+              : []),
             { content: t('profile', { ns: 'profile' }), href: RoutePath.profile + authData.id },
             { content: t('logOut'), onClick: onLogout },
           ]}

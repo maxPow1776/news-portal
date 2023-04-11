@@ -37,5 +37,7 @@
   "science": "Наука",
   "edit": "Редактировать",
   "appName": "App name",
-  "createArticle": "Создать статью"
+  "createArticle": "Создать статью",
+  "adminPanel": "Панель администратора",
+  "accessIsDenied": "Доступ запрещен"
 }

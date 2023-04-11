@@ -35,10 +35,12 @@ export interface TextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
+  'data-testid'?: string;
 }
 
 export const Text = memo(({
   className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M,
+  'data-testid': dataTestId = 'Text',
 }: TextProps) => {
   const mods: Mods = {
     [classes[theme]]: true,
@@ -50,8 +52,8 @@ export const Text = memo(({
 
   return (
     <div className={classNames(classes.text, mods, [className])}>
-      {title && <HeaderTag className={classes.title}>{title}</HeaderTag>}
-      {text && <p className={classes.text}>{text}</p>}
+      {title && <HeaderTag data-testid={`${dataTestId}.Header`} className={classes.title}>{title}</HeaderTag>}
+      {text && <p data-testid={`${dataTestId}.Paragraph`} className={classes.text}>{text}</p>}
     </div>
   );
 });

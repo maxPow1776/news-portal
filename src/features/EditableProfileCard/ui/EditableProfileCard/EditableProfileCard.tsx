@@ -26,7 +26,7 @@ const reducer: ReducersList = {
 
 export interface EditableProfileCardProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const EditableProfileCard = memo(({ className, id }: EditableProfileCardProps) => {

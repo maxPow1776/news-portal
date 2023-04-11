@@ -24,7 +24,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 export interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
@@ -58,13 +58,13 @@ export const ArticleDetails = memo(({ id, className }: ArticleDetailsProps) => {
   let content;
   if (isLoading) {
     content = (
-      <VStack gap="16" max>
+      <>
         <Skeleton className={classes.avatar} width={200} height={200} border="50%" />
         <Skeleton width={300} height={32} />
         <Skeleton width={600} height={24} />
         <Skeleton width="100%" height={200} />
         <Skeleton width="100%" height={200} />
-      </VStack>
+      </>
     );
   } else if (error) {
     content = (
@@ -94,7 +94,7 @@ export const ArticleDetails = memo(({ id, className }: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="16" className={classNames(classes.articleDetails, {}, [className])}>
+      <VStack gap="16" max className={classNames(classes.articleDetails, {}, [className])}>
         {content}
       </VStack>
     </DynamicModuleLoader>

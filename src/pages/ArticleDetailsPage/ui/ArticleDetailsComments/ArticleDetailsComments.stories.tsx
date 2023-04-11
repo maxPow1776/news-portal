@@ -17,7 +17,9 @@ export default {
 const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <ArticleDetailsComments {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  id: '1',
+};
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};

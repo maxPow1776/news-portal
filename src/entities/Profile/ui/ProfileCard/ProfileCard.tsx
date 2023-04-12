@@ -34,7 +34,7 @@ export const ProfileCard = ({
 
   if (isLoading) {
     return (
-      <HStack justify="center" className={classNames(classes.profileCard, {}, [className, classes.loading])}>
+      <HStack justify="center" max className={classNames(classes.profileCard, {}, [className, classes.loading])}>
         <Loader />
       </HStack>
     );
@@ -42,7 +42,7 @@ export const ProfileCard = ({
 
   if (error) {
     return (
-      <HStack justify="center" className={classNames(classes.profileCard, {}, [className, classes.error])}>
+      <HStack justify="center" max className={classNames(classes.profileCard, {}, [className, classes.error])}>
         <Text
           theme={TextTheme.ERROR}
           title={t('errorUploadProfile')}

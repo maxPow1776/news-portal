@@ -1,2 +1,3 @@
+export { ValidateProfileError } from './model/consts/consts';
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
-export { ProfileSchema, ValidateProfileError } from './model/types/EditableProfileCardSchema';
+export type { ProfileSchema } from './model/types/EditableProfileCardSchema';

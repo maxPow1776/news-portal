@@ -6,10 +6,11 @@ import {
   List, ListRowProps, WindowScroller,
 } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import classes from './ArticleList.module.scss';
+import { ArticleView } from '../../model/consts/consts';
 
 export interface ArticleListProps {
   className?: string;

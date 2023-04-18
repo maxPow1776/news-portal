@@ -3,7 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 
 import { Dropdown } from './Dropdown';
-import { Button } from '../Button/Button';
+import { Button } from '../../../Button/Button';
 
 const items = [
   { content: 'first' },

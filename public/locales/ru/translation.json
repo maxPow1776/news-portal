@@ -39,5 +39,7 @@
   "appName": "App name",
   "createArticle": "Создать статью",
   "adminPanel": "Панель администратора",
-  "accessIsDenied": "Доступ запрещен"
+  "accessIsDenied": "Доступ запрещен",
+  "yourFeedback": "Ваш отзыв",
+  "close": "Закрывать"
 }

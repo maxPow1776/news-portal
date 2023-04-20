@@ -39,5 +39,7 @@
   "appName": "App name",
   "createArticle": "Create article",
   "adminPanel": "Admin panel",
-  "accessIsDenied": "Access is denied"
+  "accessIsDenied": "Access is denied",
+  "yourFeedback": "Your feedback",
+  "close": "Close"
 }

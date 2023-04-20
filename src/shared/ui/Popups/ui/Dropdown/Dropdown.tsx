@@ -30,7 +30,7 @@ export const Dropdown = ({
     <Menu as="div" className={classNames(classes.dropdown, {}, [className, popupClasses.popup])}>
       <Menu.Button className={popupClasses.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(classes.menu, {}, menuClasses)}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: {active: boolean}) => (
             <button
               type="button"
@@ -44,14 +44,14 @@ export const Dropdown = ({
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item key={`dropdown=key${index}`} as={AppLink} to={item.href} disabled={item.disabled}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item key={`dropdown=key${index}`} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

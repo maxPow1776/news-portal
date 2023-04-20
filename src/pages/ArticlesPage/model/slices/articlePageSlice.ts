@@ -1,13 +1,13 @@
-import { SortOrder } from 'shared/types/index';
 import {
   createEntityAdapter,
   createSlice,
   PayloadAction,
 } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { SortOrder } from '@/shared/types/index';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import {
   Article, ArticleView, ArticleSortField, ArticleType,
-} from 'entities/Article';
+} from '@/entities/Article';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlePageSchema } from '../types/articlePageSchema';
 

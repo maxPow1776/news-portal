@@ -41,5 +41,8 @@
   "adminPanel": "Панель администратора",
   "accessIsDenied": "Доступ запрещен",
   "yourFeedback": "Ваш отзыв",
-  "close": "Закрывать"
+  "close": "Закрывать",
+  "howDoYouLikeTheArticle": "Как вам статья?",
+  "leaveYourFeedback": "Оставьте свой отзыв",
+  "thankYouForRating": "Спасибо за оценку!"
 }

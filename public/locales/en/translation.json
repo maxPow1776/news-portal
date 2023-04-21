@@ -41,5 +41,8 @@
   "adminPanel": "Admin panel",
   "accessIsDenied": "Access is denied",
   "yourFeedback": "Your feedback",
-  "close": "Close"
+  "close": "Close",
+  "howDoYouLikeTheArticle": "How do you like the article?",
+  "leaveYourFeedback": "Leave your feedback",
+  "thankYouForRating": "Thank you for rating!"
 }

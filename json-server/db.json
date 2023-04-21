@@ -670,5 +670,55 @@
       "username": "user",
       "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 3,
+      "id": "0lHECUe"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 5,
+      "id": "sRNGtPT"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 2,
+      "id": "DT5OHKU"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }

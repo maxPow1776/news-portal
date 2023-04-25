@@ -52,7 +52,8 @@ module.exports = {
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off', // !
     'maxpow1776-custom/check-paths': ['error', { alias: '@' }],
-    'maxpow1776-custom/public-api-imports': ['error', { alias: '@' }],
+    'maxpow1776-custom/public-api-imports': ['error',
+      { alias: '@', testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'] }],
   },
   globals: {
     __IS_DEV__: true,

@@ -51,7 +51,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off', // !
-    'maxpow1776-custom/check-paths': 'error',
+    'maxpow1776-custom/check-paths': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,

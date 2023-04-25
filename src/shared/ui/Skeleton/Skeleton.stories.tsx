@@ -1,7 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Skeleton } from './Skeleton';
 
@@ -27,18 +24,3 @@ Circle.args = {
   width: 100,
   height: 100,
 };
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  width: '100%',
-  height: 200,
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
-
-export const CircleDark = Template.bind({});
-CircleDark.args = {
-  border: '50%',
-  width: 100,
-  height: 100,
-};
-CircleDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

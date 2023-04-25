@@ -1,6 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Flex } from './Flex';
 
@@ -51,12 +49,6 @@ RowGap32.args = {
   gap: '32',
   children,
 };
-
-export const RowDark = Template.bind({});
-RowDark.args = {
-  children,
-};
-RowDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Column = Template.bind({});
 Column.args = {

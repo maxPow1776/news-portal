@@ -1,6 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Text } from '../Text/Text';
 
 import { Card } from './Card';
@@ -19,9 +17,3 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: <Text title="title" text="text" />,
 };
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  children: <Text title="title" text="text" />,
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

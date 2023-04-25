@@ -1,7 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 import { ArticlePageFilters } from './ArticlePageFilters';
 
@@ -17,4 +15,4 @@ const Template: ComponentStory<typeof ArticlePageFilters> = (args) => <ArticlePa
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Primary.decorators = [StoreDecorator({})];

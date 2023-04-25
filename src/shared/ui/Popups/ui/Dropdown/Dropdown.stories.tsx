@@ -1,9 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Dropdown } from './Dropdown';
 import { Button } from '../../../Button/Button';
+import { Dropdown } from './Dropdown';
 
 const items = [
   { content: 'first' },
@@ -26,10 +24,3 @@ Primary.args = {
   trigger: <Button>Open</Button>,
   items,
 };
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  trigger: <Button>Open</Button>,
-  items,
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

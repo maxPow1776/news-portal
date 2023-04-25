@@ -1,6 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Comment } from '../../model/types/comment';
 
 import { CommentCard } from './CommentCard';
@@ -25,12 +23,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   comment,
 };
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  comment,
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Loading = Template.bind({});
 Loading.args = {

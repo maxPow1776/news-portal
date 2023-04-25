@@ -1,9 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
-import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/consts';
 
 const article: Article = {
   id: '1',
@@ -95,23 +93,3 @@ Big.args = {
   view: ArticleView.BIG,
   article,
 };
-
-export const BigDark = Template.bind({});
-BigDark.args = {
-  view: ArticleView.BIG,
-  article,
-};
-BigDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Small = Template.bind({});
-Small.args = {
-  view: ArticleView.SMALL,
-  article,
-};
-
-export const SmallDark = Template.bind({});
-SmallDark.args = {
-  view: ArticleView.SMALL,
-  article,
-};
-SmallDark.decorators = [ThemeDecorator(Theme.DARK)];

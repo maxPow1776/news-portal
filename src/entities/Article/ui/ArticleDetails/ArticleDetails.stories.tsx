@@ -1,10 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
-import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
 
 export default {
   title: 'entities/ArticleDetails',
@@ -93,14 +91,6 @@ const article: Article = {
 export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-})];
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   articleDetails: {
     data: article,
   },

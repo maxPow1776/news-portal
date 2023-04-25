@@ -1,7 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Tabs } from './Tabs';
 
@@ -36,11 +34,3 @@ Primary.args = {
   value: 'tab 2',
   onTabClick: action('onTabClick'),
 };
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  tabs,
-  value: 'tab 2',
-  onTabClick: action('onTabClick'),
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,7 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
@@ -19,7 +17,3 @@ const Template: ComponentStory<typeof EditableProfileCardHeader> = (args) => <Ed
 export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [StoreDecorator({})];
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

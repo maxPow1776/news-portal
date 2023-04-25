@@ -1,6 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
@@ -50,13 +48,6 @@ OutlineSizeXL.args = {
   theme: ButtonTheme.OUTLINE,
   size: ButtonSize.XL,
 };
-
-export const OutlineDark = Template.bind({});
-OutlineDark.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE,
-};
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const BackgroundTheme = Template.bind({});
 BackgroundTheme.args = {

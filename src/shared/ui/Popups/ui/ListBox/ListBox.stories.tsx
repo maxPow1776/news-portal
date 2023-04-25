@@ -1,6 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ListBox } from './ListBox';
 
@@ -25,10 +23,6 @@ const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />
 
 export const Primary = Template.bind({});
 Primary.args = {};
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const TopRight = Template.bind({});
 TopRight.args = {

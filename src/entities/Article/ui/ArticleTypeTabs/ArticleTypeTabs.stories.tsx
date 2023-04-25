@@ -1,7 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
@@ -17,4 +15,4 @@ const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeT
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Primary.decorators = [StoreDecorator({})];

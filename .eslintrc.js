@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'maxpow1776-custom'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'maxpow1776-custom', 'unused-imports'],
   rules: {
     'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
     'react/jsx-filename-extension': [2, {
@@ -51,6 +51,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off', // !
+    'unused-imports/no-unused-imports': 'error',
     'maxpow1776-custom/check-paths': ['error', { alias: '@' }],
     'maxpow1776-custom/layer-imports': ['error',
       { alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'] }],

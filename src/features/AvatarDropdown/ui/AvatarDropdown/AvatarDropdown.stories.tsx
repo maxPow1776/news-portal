@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { AvatarDropdown } from './AvatarDropdown';
 
 export default {
-  title: 'AvatarDropdown',
+  title: 'features/AvatarDropdown',
   component: AvatarDropdown,
   argTypes: {
     backgroundColor: { control: 'color' },

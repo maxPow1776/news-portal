@@ -1,16 +1,16 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 import { NotificationList } from './NotificationList';
 
 export default {
-  title: 'NotificationList',
+  title: 'entities/Notification/NotificationList',
   component: NotificationList,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [withMock],
 } as ComponentMeta<typeof NotificationList>;
 
 const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
@@ -18,7 +18,17 @@ const Template: ComponentStory<typeof NotificationList> = (args) => <Notificatio
 export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [StoreDecorator({})];
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+Primary.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/notifications`,
+      method: 'GET',
+      status: 200,
+      response: [
+        { id: '1', title: 'title 1', description: 'description 1' },
+        { id: '2', title: 'title 2', description: 'description 2' },
+        { id: '3', title: 'title 3', description: 'description 3' },
+      ],
+    },
+  ],
+};

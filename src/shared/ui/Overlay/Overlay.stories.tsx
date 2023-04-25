@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Overlay } from './Overlay';
 
 export default {
-  title: 'Overlay',
+  title: 'shared/Overlay',
   component: Overlay,
   argTypes: {
     backgroundColor: { control: 'color' },

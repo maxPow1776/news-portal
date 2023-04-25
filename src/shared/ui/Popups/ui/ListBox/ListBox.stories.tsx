@@ -11,7 +11,7 @@ const items = [
 ];
 
 export default {
-  title: 'shared/ListBox',
+  title: 'shared/Popups/ListBox',
   component: ListBox,
   argTypes: {
     backgroundColor: { control: 'color' },

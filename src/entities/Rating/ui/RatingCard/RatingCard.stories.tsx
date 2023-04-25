@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { RatingCard } from './RatingCard';
 
 export default {
-  title: 'RatingCard',
+  title: 'entities/Rating/RatingCard',
   component: RatingCard,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -8,7 +8,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 
 export interface AvatarDropdownProps {
   className?: string;
@@ -38,9 +38,9 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
       trigger={<Avatar size={30} src={authData.avatar} />}
       items={[
         ...(isAdminPanelAvailable
-          ? [{ content: t('adminPanel'), href: RoutePath.admin_panel }]
+          ? [{ content: t('adminPanel'), href: getRouteAdminPanel() }]
           : []),
-        { content: t('profile', { ns: 'profile' }), href: RoutePath.profile + authData.id },
+        { content: t('profile', { ns: 'profile' }), href: getRouteProfile(authData.id) },
         { content: t('logOut'), onClick: onLogout },
       ]}
     />

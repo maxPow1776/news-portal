@@ -12,7 +12,7 @@ import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import classes from './ArticleListItem.module.scss';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 export interface ArticleListItemProps {
   className?: string;
@@ -51,7 +51,7 @@ export const ArticleListItem = memo(({
             <ArticleTextBlockComponent className={classes.textBlock} block={textBlock} />
           )}
           <div className={classes.footer}>
-            <AppLink target={target} to={RoutePath.article_details + article.id}>
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
               <Button>
                 {t('readMore')}
               </Button>
@@ -66,7 +66,7 @@ export const ArticleListItem = memo(({
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(classes.articleListItem, {}, [className, classes[view]])}
     >
       <Card>

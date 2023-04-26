@@ -11,7 +11,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import classes from './Navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;
@@ -34,7 +34,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <header className={classNames(classes.navbar, {}, [className])}>
         <Text className={classes.appName} title={t('appName')} theme={TextTheme.INVERTED} />
-        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
+        <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
           {t('createArticle')}
         </AppLink>
         <HStack gap="16" className={classes.actions}>

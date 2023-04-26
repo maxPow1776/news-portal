@@ -7,6 +7,7 @@ import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { counterReducer } from '@/entities/Counter';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -16,6 +17,7 @@ export function createReduxStore(
     ...asyncReducers,
     user: userReducer,
     scrollSave: scrollSaveReducer,
+    counter: counterReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
   };
 

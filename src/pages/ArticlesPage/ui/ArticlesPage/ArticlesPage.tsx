@@ -21,7 +21,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const dispatch = useAppDispatch();
 
   const onLoadNextPage = useCallback(() => {
-    dispatch(fetchNextArticlePage());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchNextArticlePage());
+    }
   }, [dispatch]);
 
   return (

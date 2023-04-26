@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 import { NotificationItem } from './NotificationItem';
 
@@ -14,5 +13,4 @@ export default {
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
+Primary.args = { item: { id: '1', title: 'title 1', description: 'desctiption 1' } };

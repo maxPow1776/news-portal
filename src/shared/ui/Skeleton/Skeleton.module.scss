@@ -27,3 +27,8 @@
     left: 100%;
   }
 }
+
+*[loki-test] .skeleton::before {
+  animation: none;
+  background: none;
+}

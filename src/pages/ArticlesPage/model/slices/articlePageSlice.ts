@@ -3,7 +3,7 @@ import {
   createSlice,
   PayloadAction,
 } from '@reduxjs/toolkit';
-import { SortOrder } from '@/shared/types/index';
+import { SortOrder } from '@/shared/types/sort';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import {
   Article, ArticleView, ArticleSortField, ArticleType,

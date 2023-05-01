@@ -109,7 +109,7 @@
       "id": "2",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://248006.selcdn.ru/LandGen/phone_e6b6a1e7b0e53cd139271de19f550d42aff2415b.webp",
+      "img": "https://248006.selcdn.ru/LandGen/phone_e6b6a1e7b0e53cd139271de19f550d42aff2415b.webp.error",
       "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -626,7 +626,7 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
+      "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png.error"
     },
     {
       "id": "2",
@@ -657,7 +657,7 @@
       "country": "Russia",
       "city": "Moscow",
       "username": "admin",
-      "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
+      "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png.error"
     },
     {
       "id": "2",

@@ -22,7 +22,8 @@ describe('article-details', () => {
     cy.addComment('text');
     cy.getByTestId('comment-card.content').should('have.length', 1);
   });
-  it('send rating', () => {
+  it('send rating (fixture)', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('article-details.info');
     cy.getByTestId('rating-card').scrollIntoView();
     cy.setRate(4, 'feedback');

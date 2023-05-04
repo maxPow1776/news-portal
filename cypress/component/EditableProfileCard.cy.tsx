@@ -1,4 +1,3 @@
-import React from 'react';
 import { EditableProfileCard } from '../../src/features/EditableProfileCard';
 import { TestProvider } from '../../src/shared/lib/tests/componentRender/componentRender';
 

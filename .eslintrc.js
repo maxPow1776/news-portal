@@ -4,7 +4,9 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended', 'prettier'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -57,6 +59,7 @@ module.exports = {
       { alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'] }],
     'maxpow1776-custom/public-api-imports': ['error',
       { alias: '@', testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'] }],
+    'react/jsx-max-props-per-line': ['error', { maximum: 5 }]
   },
   globals: {
     __IS_DEV__: true,

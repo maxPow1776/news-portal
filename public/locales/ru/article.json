@@ -6,5 +6,6 @@
   "backToList": "Обратно к списку",
   "anErrorOccurredWhileLoadingArticles": "Произошла ошибка при загрузке статей",
   "articlesNotFound": "Статьи не найдены",
-  "recommendations": "Рекомендации"
+  "recommendations": "Рекомендации",
+  "articleRatingComingSoon": "Оценка статей скоро появится"
 }

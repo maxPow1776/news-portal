@@ -6,5 +6,6 @@
   "backToList": "Back to list",
   "anErrorOccurredWhileLoadingArticles": " An error occurred while loading articles",
   "articlesNotFound": "Articles not found",
-  "recommendations": "Recommendations"
+  "recommendations": "Recommendations",
+  "articleRatingComingSoon": "Article rating coming soon"
 }

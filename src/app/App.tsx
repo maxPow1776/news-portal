@@ -5,8 +5,10 @@ import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 function App() {
+  const { theme } = useTheme();
   const dispatch = useDispatch();
   const inited = useSelector(getUserInited);
 
@@ -15,7 +17,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className={classNames('app', {}, [])}>
+    <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
         <div className="content-page">

@@ -8,6 +8,7 @@ import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import classes from './ArticlesPage.module.scss';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 
 export interface ArticlesPageProps {
   className?: string;
@@ -34,6 +35,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         className={classNames(classes.articlesPage, {}, [className])}>
         <ArticlePageFilters />
         <ArticleInfiniteList className={classes.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );

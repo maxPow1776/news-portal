@@ -1,6 +1,4 @@
-import {
-  MutableRefObject, ReactNode, useRef, UIEvent,
-} from 'react';
+import { MutableRefObject, ReactNode, useRef, UIEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getScrollSaveByPath, scrollSaveActions } from '@/features/ScrollSave';
@@ -12,6 +10,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import classes from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export interface PageProps extends TestProps {
   className?: string;
@@ -40,21 +39,30 @@ export const Page = (props: PageProps) => {
   });
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    dispatch(scrollSaveActions.setScrollPosition({
-      position: e.currentTarget.scrollTop,
-      path: pathname,
-    }));
+    dispatch(
+      scrollSaveActions.setScrollPosition({
+        position: e.currentTarget.scrollTop,
+        path: pathname,
+      }),
+    );
   }, 500);
 
   return (
     <main
       ref={wrapperRef}
-      className={classNames(classes.page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: 'isAppRedisigned',
+          off: () => classes.page,
+          on: () => classes.pageRedisigned,
+        }),
+        {},
+        [className],
+      )}
       onScroll={onScroll}
       id={PAGE_ID}
       // eslint-disable-next-line react/destructuring-assignment
-      data-testid={props['data-testid'] ?? 'page'}
-    >
+      data-testid={props['data-testid'] ?? 'page'}>
       {children}
       {onScrollEnd && <div className={classes.trigger} ref={triggerRef} />}
     </main>

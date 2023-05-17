@@ -628,11 +628,12 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedisigned": true
       },
       "avatar": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png.error",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true

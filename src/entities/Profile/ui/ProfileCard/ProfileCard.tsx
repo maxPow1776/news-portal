@@ -2,11 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Input } from '@/shared/ui/Input';
-import { Loader } from '@/shared/ui/Loader';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { Profile } from '../../model/types/profile';
 import classes from './ProfileCard.module.scss';
 
@@ -27,8 +27,19 @@ export interface ProfileCardProps {
 }
 
 export const ProfileCard = ({
-  className, data, isLoading, error, readonly, onChangeFirstname, onChangeLastname, onChangeAge, onChangeCity,
-  onChangeUsername, onChangeAvatar, onChangeCurrency, onChangeCountry,
+  className,
+  data,
+  isLoading,
+  error,
+  readonly,
+  onChangeFirstname,
+  onChangeLastname,
+  onChangeAge,
+  onChangeCity,
+  onChangeUsername,
+  onChangeAvatar,
+  onChangeCurrency,
+  onChangeCountry,
 }: ProfileCardProps) => {
   const { t } = useTranslation('profile');
 
@@ -78,40 +89,12 @@ export const ProfileCard = ({
         readonly={readonly}
         data-testid="profile-card.lastname"
       />
-      <Input
-        value={data?.age}
-        placeholder={t('yourAge')}
-        onChange={onChangeAge}
-        readonly={readonly}
-      />
-      <Input
-        value={data?.city}
-        placeholder={t('yourCity')}
-        onChange={onChangeCity}
-        readonly={readonly}
-      />
-      <Input
-        value={data?.username}
-        placeholder={t('yourUsername')}
-        onChange={onChangeUsername}
-        readonly={readonly}
-      />
-      <Input
-        value={data?.avatar}
-        placeholder={t('yourAvatar')}
-        onChange={onChangeAvatar}
-        readonly={readonly}
-      />
-      <CurrencySelect
-        value={data?.currency}
-        onChange={onChangeCurrency}
-        readonly={readonly}
-      />
-      <CountrySelect
-        value={data?.country}
-        onChange={onChangeCountry}
-        readonly={readonly}
-      />
+      <Input value={data?.age} placeholder={t('yourAge')} onChange={onChangeAge} readonly={readonly} />
+      <Input value={data?.city} placeholder={t('yourCity')} onChange={onChangeCity} readonly={readonly} />
+      <Input value={data?.username} placeholder={t('yourUsername')} onChange={onChangeUsername} readonly={readonly} />
+      <Input value={data?.avatar} placeholder={t('yourAvatar')} onChange={onChangeAvatar} readonly={readonly} />
+      <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
+      <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
     </VStack>
   );
 };

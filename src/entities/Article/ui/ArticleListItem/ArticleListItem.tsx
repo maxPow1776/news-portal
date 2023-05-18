@@ -2,19 +2,19 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button } from '@/shared/ui/Button';
-import { Card } from '@/shared/ui/Card';
-import { Icon } from '@/shared/ui/Icon';
-import { Text } from '@/shared/ui/Text';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Button } from '@/shared/ui/deprecated/Button';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import classes from './ArticleListItem.module.scss';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 export interface ArticleListItemProps {
   className?: string;
@@ -23,9 +23,7 @@ export interface ArticleListItemProps {
   target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = memo(({
-  className, article, view, target = '_self',
-}: ArticleListItemProps) => {
+export const ArticleListItem = memo(({ className, article, view, target = '_self' }: ArticleListItemProps) => {
   const { t } = useTranslation();
 
   const types = <Text className={classes.types} text={article.type.join(', ')} />;
@@ -41,8 +39,7 @@ export const ArticleListItem = memo(({
     return (
       <div
         data-testid="article-list-item"
-        className={classNames(classes.articleListItem, {}, [className, classes[view]])}
-      >
+        className={classNames(classes.articleListItem, {}, [className, classes[view]])}>
         <Card>
           <div className={classes.header}>
             <Avatar size={30} src={article.user.avatar} />
@@ -57,14 +54,10 @@ export const ArticleListItem = memo(({
             src={article.img}
             fallback={<Skeleton width="100%" height={250} />}
           />
-          {textBlock && (
-            <ArticleTextBlockComponent className={classes.textBlock} block={textBlock} />
-          )}
+          {textBlock && <ArticleTextBlockComponent className={classes.textBlock} block={textBlock} />}
           <div className={classes.footer}>
             <AppLink target={target} to={getRouteArticleDetails(article.id)}>
-              <Button>
-                {t('readMore')}
-              </Button>
+              <Button>{t('readMore')}</Button>
             </AppLink>
             {views}
           </div>
@@ -78,8 +71,7 @@ export const ArticleListItem = memo(({
       data-testid="article-list-item"
       target={target}
       to={getRouteArticleDetails(article.id)}
-      className={classNames(classes.articleListItem, {}, [className, classes[view]])}
-    >
+      className={classNames(classes.articleListItem, {}, [className, classes[view]])}>
       <Card>
         <div className={classes.imageWrapper}>
           <AppImage

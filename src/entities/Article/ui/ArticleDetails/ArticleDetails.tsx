@@ -4,16 +4,18 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
-import { Icon } from '@/shared/ui/Icon';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import {
-  getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading,
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { articleDetailsReducer } from '../../model/slice/articleDetaisSlice';
 import classes from './ArticleDetails.module.scss';
@@ -53,7 +55,9 @@ export const ArticleDetails = memo(({ id, className }: ArticleDetailsProps) => {
   }, []);
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') { dispatch(fetchArticleById(id)); }
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   let content;
@@ -68,9 +72,7 @@ export const ArticleDetails = memo(({ id, className }: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = (
-      <Text title={t('errorWhileLoadingPage')} align={TextAlign.CENTER} />
-    );
+    content = <Text title={t('errorWhileLoadingPage')} align={TextAlign.CENTER} />;
   } else {
     content = (
       <>

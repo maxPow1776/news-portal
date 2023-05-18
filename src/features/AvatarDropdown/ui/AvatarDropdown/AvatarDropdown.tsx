@@ -1,13 +1,11 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 
 export interface AvatarDropdownProps {
@@ -37,9 +35,7 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
       direction="bottom left"
       trigger={<Avatar size={30} src={authData.avatar} fallbackInverted />}
       items={[
-        ...(isAdminPanelAvailable
-          ? [{ content: t('adminPanel'), href: getRouteAdminPanel() }]
-          : []),
+        ...(isAdminPanelAvailable ? [{ content: t('adminPanel'), href: getRouteAdminPanel() }] : []),
         { content: t('profile', { ns: 'profile' }), href: getRouteProfile(authData.id) },
         { content: t('logOut'), onClick: onLogout },
       ]}

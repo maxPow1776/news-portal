@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Text } from '@/shared/ui/Text';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { AppLink } from '@/shared/ui/AppLink';
-import { VStack } from '@/shared/ui/Stack';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import classes from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 import { getRouteProfile } from '@/shared/const/router';
@@ -22,8 +22,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
         data-testid="comment-card.loading"
         gap="8"
         max
-        className={classNames(classes.commentCard, {}, [className, classes.loading])}
-      >
+        className={classNames(classes.commentCard, {}, [className, classes.loading])}>
         <div className={classes.header}>
           <Skeleton height={30} width={30} border="50%" />
           <Skeleton className={classes.username} height={16} width={100} />

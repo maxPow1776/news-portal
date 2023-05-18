@@ -1,5 +1,6 @@
 import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import { Button } from '../../../Button/Button';
@@ -8,24 +9,24 @@ import classes from './ListBox.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 import { HStack } from '../../../Stack';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
   value: string;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
-  items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+  items?: ListBoxItem<T>[];
   className?: string;
-  value?: string;
+  value?: T;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange: (value: T) => void;
   readonly?: boolean;
   direction?: DropdownDirection;
   label?: string;
 }
 
-export const ListBox = ({
+export const ListBox = <T extends string>({
   items,
   className,
   value,
@@ -34,8 +35,11 @@ export const ListBox = ({
   readonly,
   direction = 'bottom right',
   label,
-}: ListBoxProps) => {
+}: ListBoxProps<T>) => {
+  const { t } = useTranslation();
   const optionsClasses = [mapDirectionClass[direction], popupClasses.menu];
+
+  const selectedItem = useMemo(() => items?.find((item) => item.value === value), [items, value]);
 
   return (
     <HStack gap="4">
@@ -47,7 +51,9 @@ export const ListBox = ({
         value={value}
         onChange={onChange}>
         <HListBox.Button disabled={readonly} className={classes.trigger}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          <Button variant="filled" disabled={readonly}>
+            {t(`${selectedItem?.value}`) ?? defaultValue}
+          </Button>
         </HListBox.Button>
         <HListBox.Options className={classNames(classes.options, {}, optionsClasses)}>
           {items?.map((item) => (
@@ -57,8 +63,9 @@ export const ListBox = ({
                   className={classNames(classes.item, {
                     [popupClasses.active]: active,
                     [popupClasses.disabled]: item.disabled,
+                    [popupClasses.selected]: selected,
                   })}>
-                  {selected && '>'}
+                  {selected}
                   {item.content}
                 </li>
               )}

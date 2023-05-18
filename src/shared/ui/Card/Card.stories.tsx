@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Text } from '../../deprecated/Text/Text';
-
 import { Card } from './Card';
+import { Text } from '../Text';
 
 export default {
   title: 'shared/Card',

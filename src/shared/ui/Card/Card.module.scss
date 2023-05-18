@@ -1,6 +1,5 @@
 .card {
   padding: 25px;
-  border-radius: 12px;
 }
 
 .gap_0 {
@@ -25,6 +24,14 @@
 
 .outline {
   border: 1px solid var(--accent-redesigned);
+}
+
+.round {
+  border-radius: 40px;
+}
+
+.regular {
+  border-radius: 12px;
 }
 
 .light {

@@ -9,7 +9,9 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
+import { AppLogo } from '@/shared/ui/AppLogo';
+import { Icon } from '@/shared/ui/Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 export interface SidebarProps {
   className?: string;
@@ -56,24 +58,22 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       on={
         <aside
           data-testid="sidebar"
-          className={classNames(classes.sidebarRedisigned, { [classes.collapsed]: collapsed }, [className])}>
-          <AppLogo className={classes.appLogo} />
-          {/* <Button
-            data-testid="sidebar-toggle"
-            onClick={onToggle}
-            className={classes.collapsedBtn}
-            theme={ButtonTheme.BACKGROUND_INVERTED}
-            size={ButtonSize.L}
-            square>
-            {collapsed ? '>' : '<'}
-          </Button>
+          className={classNames(classes.sidebarRedisigned, { [classes.collapsedRedisigned]: collapsed }, [className])}>
+          <AppLogo size={collapsed ? 30 : 50} className={classes.appLogo} />
           <VStack role="navigation" gap="8" className={classes.items}>
             {itemsList}
           </VStack>
+          <Icon
+            data-testid="sidebar-toggle"
+            onClick={onToggle}
+            className={classes.collapsedBtn}
+            Svg={ArrowIcon}
+            clickable
+          />
           <div className={classes.switchers}>
             <ThemeSwitcher />
             <LangSwitcher short={collapsed} className={classes.lang} />
-          </div> */}
+          </div>
         </aside>
       }
     />

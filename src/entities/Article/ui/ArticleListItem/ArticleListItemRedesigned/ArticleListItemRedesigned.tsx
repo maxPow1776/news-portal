@@ -25,7 +25,12 @@ export const ArticleListItemRedesigned = memo(
   ({ className, article, view, target = '_self' }: ArticleListItemProps) => {
     const { t } = useTranslation();
 
-    const types = <Text className={classes.types} text={article.type.join(', ')} />;
+    const userInfo = (
+      <>
+        <Avatar size={32} src={article.user.avatar} />
+        <Text bold text={article.user.username} />
+      </>
+    );
     const views = (
       <HStack gap="8">
         <Icon Svg={EyeIcon} />
@@ -71,25 +76,27 @@ export const ArticleListItemRedesigned = memo(
 
     return (
       <AppLink
-        data-testid="article-list-item"
+        data-testid="ArticleListItem"
         target={target}
         to={getRouteArticleDetails(article.id)}
-        className={classNames(classes.articleListItem, {}, [className, classes[view]])}>
-        <Card>
-          <div className={classes.imageWrapper}>
-            <AppImage
-              className={classes.image}
-              alt={article.title}
-              src={article.img}
-              fallback={<Skeleton width={200} height={200} />}
-            />
-            <Text className={classes.date} text={article.createdAt} />
-          </div>
-          <div className={classes.infoWrapper}>
-            {types}
-            {views}
-          </div>
-          <Text className={classes.title} text={article.title} />
+        className={classNames('', {}, [className, classes[view]])}>
+        <Card className={classes.card} border="round">
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            alt={article.title}
+            src={article.img}
+            className={classes.img}
+          />
+          <VStack className={classes.info} gap="4">
+            <Text title={article.title} className={classes.title} />
+            <VStack gap="4" className={classes.footer} max>
+              <HStack justify="between" max>
+                <Text text={article.createdAt} className={classes.date} />
+                {views}
+              </HStack>
+              <HStack gap="4">{userInfo}</HStack>
+            </VStack>
+          </VStack>
         </Card>
       </AppLink>
     );

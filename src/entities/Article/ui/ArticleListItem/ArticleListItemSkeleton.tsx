@@ -20,10 +20,15 @@ export const ArticleListItemSkeleton = memo(({ className, view }: ArticleListIte
     on: () => SkeletonRedesigned,
   });
   const Card = toggleFeatures({ name: 'isAppRedesigned', off: () => CardDeprecated, on: () => CardRedesigned });
+  const mainClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => '',
+    on: () => classes.articleListItemRedesigned,
+  });
 
   if (view === ArticleView.BIG) {
     return (
-      <div className={classNames(classes.articleListItem, {}, [className, classes[view]])}>
+      <div className={classNames(mainClass, {}, [className, classes[view]])}>
         <Card>
           <div className={classes.header}>
             <Skeleton height={30} width={30} border="50%" />
@@ -41,7 +46,7 @@ export const ArticleListItemSkeleton = memo(({ className, view }: ArticleListIte
   }
 
   return (
-    <div className={classNames(classes.articleListItem, {}, [className, classes[view]])}>
+    <div className={classNames(mainClass, {}, [className, classes[view]])}>
       <Card>
         <div className={classes.imageWrapper}>
           <Skeleton width={200} height={200} className={classes.image} />

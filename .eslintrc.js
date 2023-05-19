@@ -39,7 +39,7 @@ module.exports = {
       markupOnly: true,
       ignoreAttribute: [
         'data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'role', 'as', 'border',
-        'feature', 'color', 'variant', 'size', 'space'
+        'feature', 'color', 'variant', 'size', 'space', 'wrap'
       ],
     }],
     'max-len': [2, {

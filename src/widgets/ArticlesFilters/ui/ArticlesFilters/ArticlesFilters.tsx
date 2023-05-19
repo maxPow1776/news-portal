@@ -42,6 +42,7 @@ export const ArticlesFilters = memo(
       <Card className={classNames(classes.articlesFilters, {}, [className])} padding="24">
         <VStack gap="16">
           <Input
+            size="s"
             value={search}
             onChange={onChangeSearch}
             placeholder={t('search')}

@@ -26,9 +26,10 @@ export const Tabs = memo(({ className, tabs, value, onTabClick, direction = 'row
   );
 
   return (
-    <Flex direction={direction} gap="8" align="start" className={classNames(classes.tabs, {}, [className])}>
+    <Flex direction={direction} gap="4" align="start" className={classNames(classes.tabs, {}, [className])}>
       {tabs.map((tab) => (
         <Card
+          padding="0"
           className={classes.tab}
           key={tab.value}
           variant={tab.value === value ? 'light' : 'normal'}

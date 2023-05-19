@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, { InputHTMLAttributes, memo, MutableRefObject, ReactNode, useEffect, useRef, useState } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import classes from './Input.module.scss';
 
@@ -10,15 +10,25 @@ interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void;
   autofocus?: boolean;
   readonly?: boolean;
+  addonLeft?: ReactNode;
+  addonRight?: ReactNode;
 }
 
 export const Input = memo(
-  ({ className, value, onChange, type = 'text', placeholder, autofocus, readonly, ...otherProps }: InputProps) => {
+  ({
+    className,
+    value,
+    onChange,
+    type = 'text',
+    placeholder,
+    autofocus,
+    readonly,
+    addonLeft,
+    addonRight,
+    ...otherProps
+  }: InputProps) => {
     const [isFocused, setIsFocused] = useState(false);
-    const [carriagePosition, setCarriagePosition] = useState(0);
     const ref = useRef() as MutableRefObject<HTMLInputElement>;
-
-    const isCarriageVisible = isFocused && !readonly;
 
     useEffect(() => {
       if (autofocus) {
@@ -29,7 +39,6 @@ export const Input = memo(
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e.target.value);
-      setCarriagePosition(e.target.value.length);
     };
 
     const onBlur = () => {
@@ -40,32 +49,29 @@ export const Input = memo(
       setIsFocused(true);
     };
 
-    const onSelect = (e: any) => {
-      setCarriagePosition(e?.target?.selectionStart || 0);
-    };
-
     const mods: Mods = {
       [classes.readonly]: readonly,
+      [classes.focused]: isFocused,
+      [classes.withAddonLeft]: Boolean(addonLeft),
+      [classes.withAddonRight]: Boolean(addonRight),
     };
 
     return (
       <div className={classNames(classes.inputWrapper, mods, [className])}>
-        {placeholder && <div className={classes.placeholder}>{`${placeholder}>`}</div>}
-        <div className={classes.carriageWrapper}>
-          <input
-            {...otherProps}
-            ref={ref}
-            type={type}
-            value={value}
-            onChange={onChangeHandler}
-            className={classes.input}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            onSelect={onSelect}
-            readOnly={readonly}
-          />
-          {isCarriageVisible && <span className={classes.carriage} style={{ left: `${carriagePosition * 8.8}px` }} />}
-        </div>
+        {addonLeft && <div className={classes.addonLeft}>{addonLeft}</div>}
+        <input
+          {...otherProps}
+          ref={ref}
+          type={type}
+          value={value}
+          onChange={onChangeHandler}
+          className={classes.input}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          placeholder={placeholder}
+          readOnly={readonly}
+        />
+        {addonRight && <div className={classes.addonRight}>{addonRight}</div>}
       </div>
     );
   },

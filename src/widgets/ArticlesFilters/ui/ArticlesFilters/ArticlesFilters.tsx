@@ -9,6 +9,8 @@ import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { SortOrder } from '@/shared/types/sort';
+import SearchIcon from '@/shared/assets/icons/search.svg';
+import { Icon } from '@/shared/ui/Icon';
 
 export interface ArticlesFiltersProps {
   className?: string;
@@ -38,8 +40,13 @@ export const ArticlesFilters = memo(
 
     return (
       <Card className={classNames(classes.articlesFilters, {}, [className])} padding="24">
-        <VStack gap="32">
-          <Input value={search} onChange={onChangeSearch} placeholder={t('search')} />
+        <VStack gap="16">
+          <Input
+            value={search}
+            onChange={onChangeSearch}
+            placeholder={t('search')}
+            addonLeft={<Icon Svg={SearchIcon} />}
+          />
           <ArticleTypeTabs value={type} onChangeType={onChangeType} className={classes.tabs} />
           <ArticleSortSelector order={order} sort={sort} onChangeOrder={onChangeOrder} onChangeSort={onChangeSort} />
         </VStack>

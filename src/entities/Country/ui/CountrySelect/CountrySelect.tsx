@@ -42,6 +42,6 @@ export const CountrySelect = memo(({ className, value, onChange, readonly }: Cou
   };
 
   return (
-    <ToggleFeatures feature="isAppRedisigned" off={<ListBoxDeprecated {...props} />} on={<ListBox {...props} />} />
+    <ToggleFeatures feature="isAppRedesigned" off={<ListBoxDeprecated {...props} />} on={<ListBox {...props} />} />
   );
 });

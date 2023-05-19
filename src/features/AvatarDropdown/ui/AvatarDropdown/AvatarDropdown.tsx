@@ -40,7 +40,7 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <DropdownDeprecated
           className={classNames('', {}, [className])}

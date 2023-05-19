@@ -1,7 +1,6 @@
 .title,
 .text {
   color: var(--text-redesigned);
-  white-space: nowrap;
 }
 
 .error {
@@ -58,4 +57,15 @@
   .text {
     font: var(--font-l-redesigned);
   }
+}
+
+.bold {
+  .title,
+  .text {
+    font-weight: 700;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
 }

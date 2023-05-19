@@ -23,7 +23,7 @@ const viewTypes = [
   {
     view: ArticleView.BIG,
     icon: toggleFeatures({
-      name: 'isAppRedisigned',
+      name: 'isAppRedesigned',
       off: () => TilesIconDeprecated,
       on: () => TilesIcon,
     }),
@@ -31,7 +31,7 @@ const viewTypes = [
   {
     view: ArticleView.SMALL,
     icon: toggleFeatures({
-      name: 'isAppRedisigned',
+      name: 'isAppRedesigned',
       off: () => ListIconDeprecated,
       on: () => ListIcon,
     }),
@@ -45,7 +45,7 @@ export const ArticleViewSelector = memo(({ className, view, onViewClick }: Artic
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <div className={classNames(classes.articleViewSelector, {}, [className])}>
           {viewTypes.map((viewType) => (
@@ -61,7 +61,7 @@ export const ArticleViewSelector = memo(({ className, view, onViewClick }: Artic
         </div>
       }
       on={
-        <Card border="round" className={classNames(classes.articleViewSelectorRedisigned, {}, [className])}>
+        <Card border="round" className={classNames(classes.articleViewSelectorRedesigned, {}, [className])}>
           <HStack gap="8">
             {viewTypes.map((viewType) => (
               <Icon

@@ -11,7 +11,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
 
-export const ProfileCardRedisignedError = () => {
+export const ProfileCardRedesignedError = () => {
   const { t } = useTranslation('profile');
   return (
     <HStack justify="center" max>
@@ -20,7 +20,7 @@ export const ProfileCardRedisignedError = () => {
   );
 };
 
-export const ProfileCardRedisignedSkeleton = () => {
+export const ProfileCardRedesignedSkeleton = () => {
   return (
     <Card padding="24" max>
       <VStack gap="32" max>
@@ -46,7 +46,7 @@ export const ProfileCardRedisignedSkeleton = () => {
   );
 };
 
-export const ProfileCardRedisigned = memo(
+export const ProfileCardRedesigned = memo(
   ({
     className,
     data,

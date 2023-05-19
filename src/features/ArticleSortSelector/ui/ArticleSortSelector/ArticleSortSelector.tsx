@@ -56,7 +56,7 @@ export const ArticleSortSelector = memo(
 
     return (
       <ToggleFeatures
-        feature="isAppRedisigned"
+        feature="isAppRedesigned"
         off={
           <div className={classNames(classes.articleSortSelector, {}, [className])}>
             <Select value={sort} onChange={onChangeSort} options={sortFieldOptions} label={t('sortBy')} />

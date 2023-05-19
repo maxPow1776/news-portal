@@ -16,7 +16,7 @@ export interface NotificationItemProps {
 export const NotificationItem = memo(({ className, item }: NotificationItemProps) => {
   const content = (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <CardDeprecated theme={CardTheme.OUTLINE} className={classNames(classes.notificationItem, {}, [className])}>
           <TextDeprecated title={item.title} text={item.description} />

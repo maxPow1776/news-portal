@@ -34,7 +34,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <ToggleFeatures
-        feature="isAppRedisigned"
+        feature="isAppRedesigned"
         off={
           <header className={classNames(classes.navbar, {}, [className])}>
             <Text className={classes.appName} title={t('appName')} theme={TextTheme.INVERTED} />
@@ -48,7 +48,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           </header>
         }
         on={
-          <header className={classNames(classes.navbarRedisigned, {}, [className])}>
+          <header className={classNames(classes.navbarRedesigned, {}, [className])}>
             <HStack gap="16" className={classes.actions}>
               <NotificationButton />
               <AvatarDropdown />

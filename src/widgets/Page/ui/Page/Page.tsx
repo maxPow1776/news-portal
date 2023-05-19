@@ -31,7 +31,7 @@ export const Page = (props: PageProps) => {
   useInfiniteScroll({
     triggerRef,
     wrapperRef: toggleFeatures({
-      name: 'isAppRedisigned',
+      name: 'isAppRedesigned',
       off: () => wrapperRef,
       on: () => undefined,
     }),
@@ -56,9 +56,9 @@ export const Page = (props: PageProps) => {
       ref={wrapperRef}
       className={classNames(
         toggleFeatures({
-          name: 'isAppRedisigned',
+          name: 'isAppRedesigned',
           off: () => classes.page,
-          on: () => classes.pageRedisigned,
+          on: () => classes.pageRedesigned,
         }),
         {},
         [className],

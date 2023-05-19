@@ -9,10 +9,10 @@ import {
   ProfileCardDeprecatedLoader,
 } from '../ProfileCardDeprecated/ProfileCardDeprecated';
 import {
-  ProfileCardRedisigned,
-  ProfileCardRedisignedError,
-  ProfileCardRedisignedSkeleton,
-} from '../ProfileCardRedisigned/ProfileCardRedisigned';
+  ProfileCardRedesigned,
+  ProfileCardRedesignedError,
+  ProfileCardRedesignedSkeleton,
+} from '../ProfileCardRedesigned/ProfileCardRedesigned';
 
 export interface ProfileCardProps {
   className?: string;
@@ -37,9 +37,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
   if (isLoading) {
     return (
       <ToggleFeatures
-        feature="isAppRedisigned"
+        feature="isAppRedesigned"
         off={<ProfileCardDeprecatedLoader />}
-        on={<ProfileCardRedisignedSkeleton />}
+        on={<ProfileCardRedesignedSkeleton />}
       />
     );
   }
@@ -47,18 +47,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
   if (error) {
     return (
       <ToggleFeatures
-        feature="isAppRedisigned"
+        feature="isAppRedesigned"
         off={<ProfileCardDeprecatedError />}
-        on={<ProfileCardRedisignedError />}
+        on={<ProfileCardRedesignedError />}
       />
     );
   }
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={<ProfileCardDeprecated {...props} />}
-      on={<ProfileCardRedisigned {...props} />}
+      on={<ProfileCardRedesigned {...props} />}
     />
   );
 };

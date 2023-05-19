@@ -30,7 +30,7 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
 
   const trigger = (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <ButtonDeprecated onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
           <IconDeprecated Svg={NotificationIconDeprecated} inverted />
@@ -44,7 +44,7 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
     <>
       <BrowserView>
         <ToggleFeatures
-          feature="isAppRedisigned"
+          feature="isAppRedesigned"
           off={
             <PopoverDeprecated
               className={classNames(classes.notificationButton, {}, [className])}

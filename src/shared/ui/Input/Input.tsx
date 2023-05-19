@@ -86,7 +86,7 @@ export const Input = memo(
     if (label) {
       return (
         <HStack gap="8" max>
-          <Text text={label} />
+          <Text space="nowrap" text={label} />
           {input}
         </HStack>
       );

@@ -1,17 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
-import { ProfileCardRedisigned } from './ProfileCardRedisigned';
+import { ArticleListItemDeprecated } from './ArticleListItemDeprecated';
 
 export default {
-  title: 'ProfileCardRedisigned',
-  component: ProfileCardRedisigned,
+  title: 'ArticleListItemDeprecated',
+  component: ArticleListItemDeprecated,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ProfileCardRedisigned>;
+} as ComponentMeta<typeof ArticleListItemDeprecated>;
 
-const Template: ComponentStory<typeof ProfileCardRedisigned> = (args) => <ProfileCardRedisigned {...args} />;
+const Template: ComponentStory<typeof ArticleListItemDeprecated> = (args) => <ArticleListItemDeprecated {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

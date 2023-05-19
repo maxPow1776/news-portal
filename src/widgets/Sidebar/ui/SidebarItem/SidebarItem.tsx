@@ -23,7 +23,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <AppLinkDeprecated
           to={item.path}
@@ -36,7 +36,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
       on={
         <AppLink
           to={item.path}
-          className={classNames(classes.itemRedisigned, { [classes.collapsedRedisigned]: collapsed })}
+          className={classNames(classes.itemRedesigned, { [classes.collapsedRedesigned]: collapsed })}
           activeClassName={classes.active}>
           <Icon Svg={item.Icon} />
           <span className={classes.link}>{t(item.text)}</span>

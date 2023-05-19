@@ -46,7 +46,7 @@ export const ArticleTypeTabs = memo(({ className, value, onChangeType }: Article
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <TabsDeprecated
           className={classNames('', {}, [className])}

@@ -26,7 +26,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <ButtonDeprecated
           theme={ButtonTheme.CLEAR}

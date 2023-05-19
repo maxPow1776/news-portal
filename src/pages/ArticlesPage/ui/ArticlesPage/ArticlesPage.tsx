@@ -33,7 +33,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   const content = (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       off={
         <Page
           data-testid="articles-page"

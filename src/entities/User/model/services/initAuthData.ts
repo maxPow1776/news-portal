@@ -9,6 +9,7 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
   async (_, { dispatch, rejectWithValue }) => {
     try {
       const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY);
+
       if (!userId) {
         return rejectWithValue('');
       }

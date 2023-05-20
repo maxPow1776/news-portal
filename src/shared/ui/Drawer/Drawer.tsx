@@ -1,10 +1,11 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
-import { Overlay } from '../../Overlay/Overlay';
-import { Portal } from '../../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
 import classes from './Drawer.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
   className?: string;
@@ -16,9 +17,6 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-/**
- * @deprecated
- */
 export const DrawerContent = memo(({ className, children, onClose, isOpen, lazy }: DrawerProps) => {
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -73,7 +71,17 @@ export const DrawerContent = memo(({ className, children, onClose, isOpen, lazy 
 
   return (
     <Portal>
-      <div className={classNames(classes.Drawer, {}, [className, theme, 'app_drawer'])}>
+      <div
+        className={classNames(classes.Drawer, {}, [
+          className,
+          theme,
+          'app_drawer',
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            off: () => classes.drawerOld,
+            on: () => classes.drawerNew,
+          }),
+        ])}>
         <Overlay onClick={close} />
         <Spring.a.div
           className={classes.sheet}

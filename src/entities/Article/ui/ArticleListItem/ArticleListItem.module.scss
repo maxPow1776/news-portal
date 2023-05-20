@@ -44,6 +44,22 @@
   transition: 0.2s;
   cursor: pointer;
 
+  .date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+
+    .date {
+      display: block;
+    }
+  }
+
   .imageWrapper {
     width: 200px;
     height: 200px;
@@ -54,13 +70,6 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
-  }
-
-  .date {
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: none;
   }
 
   .infoWrapper {
@@ -91,15 +100,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
-  &:hover {
-    opacity: 0.8;
-    transform: scale(1.01);
-
-    .date {
-      display: block;
-    }
-  }
 }
 
 .articleListItemRedesigned {
@@ -108,7 +108,9 @@
   }
 
   &.SMALL {
-    width: 240px;
-    height: 350px;
+    .card {
+      height: 350px;
+      width: 240px;
+    }
   }
 }

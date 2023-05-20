@@ -4,7 +4,7 @@ import classes from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outline' | 'light';
 export type CardPaddings = '0' | '8' | '16' | '24';
-export type CardBorder = 'round' | 'regular';
+export type CardBorder = 'round' | 'regular' | 'partial';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;

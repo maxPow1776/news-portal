@@ -65,7 +65,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
           </HStack>
         }
         on={
-          <Card max padding="24" border="round">
+          <Card max padding="24" border="partial">
             <HStack
               data-testid="add-comment-form"
               justify="between"

@@ -61,7 +61,7 @@ export const ArticleViewSelector = memo(({ className, view, onViewClick }: Artic
         </div>
       }
       on={
-        <Card border="round" className={classNames(classes.articleViewSelectorRedesigned, {}, [className])}>
+        <Card border="partial" className={classNames(classes.articleViewSelectorRedesigned, {}, [className])}>
           <HStack gap="8">
             {viewTypes.map((viewType) => (
               <Icon

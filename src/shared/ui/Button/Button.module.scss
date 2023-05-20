@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   line-height: 22px;
+  white-space: nowrap;
 
   &:hover {
     color: var(--accent-redesigned);
@@ -38,12 +39,23 @@
 }
 
 .outline {
-  border: 2px solid var(--icon-redesigned);
   background: none;
   border-radius: 34px;
 
   &:hover {
     border: 2px solid var(--accent-redesigned);
+  }
+
+  &.normal {
+    border: 2px solid var(--icon-redesigned);
+  }
+
+  &.success {
+    border: 2px solid var(--save-redesigned);
+  }
+
+  &.error {
+    border: 2px solid var(--cancel-redesigned);
   }
 }
 

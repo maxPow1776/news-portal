@@ -4,6 +4,7 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import classes from './Button.module.scss';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
+export type ButtonColor = 'normal' | 'success' | 'error';
 export type ButtonSize = 'm' | 'l' | 'xl';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,6 +15,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   children?: ReactNode;
   fullWidth?: boolean;
+  color?: ButtonColor;
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
 }
@@ -29,6 +31,7 @@ export const Button = memo(
     fullWidth,
     addonLeft,
     addonRight,
+    color = 'normal',
     ...otherProps
   }: ButtonProps) => {
     const mods: Mods = {
@@ -43,7 +46,7 @@ export const Button = memo(
         {...otherProps}
         type="button"
         disabled={disabled}
-        className={classNames(classes.button, mods, [className, classes[variant], classes[size]])}>
+        className={classNames(classes.button, mods, [className, classes[variant], classes[size], classes[color]])}>
         {addonLeft && <div className={classes.addonLeft}>{addonLeft}</div>}
         {children}
         {addonRight && <div className={classes.addonRight}>{addonRight}</div>}

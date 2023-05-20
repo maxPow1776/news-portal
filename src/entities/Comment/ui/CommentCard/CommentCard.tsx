@@ -65,7 +65,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
         </VStack>
       }
       on={
-        <Card max padding="24" border="round" className={className}>
+        <Card max padding="24" border="partial" className={className}>
           <VStack data-testid="comment-card.content" gap="8" max>
             <AppLink to={getRouteProfile(comment.user.id)}>
               <HStack gap="8">

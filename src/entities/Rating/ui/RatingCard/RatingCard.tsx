@@ -122,7 +122,7 @@ export const RatingCard = memo(
           </CardDeprecated>
         }
         on={
-          <Card className={className} max data-testid="rating-card" padding="24" border="round">
+          <Card className={className} max data-testid="rating-card" padding="24" border="partial">
             <VStack align="center" gap="8">
               <Text title={starsCount ? t('thankYouForRating') : title} />
               <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />

@@ -49,11 +49,10 @@ export const ArticleList = memo(
         }
         on={
           <HStack wrap="wrap" gap="16" data-testid="article-list" className={classNames('', {}, [className])}>
-            {/* {articles.map((item) => (
+            {articles.map((item) => (
               <ArticleListItem article={item} view={view} target={target} key={item.id} className={classes.card} />
-            ))} */}
-            {/* {isLoading && getSkeletons(view)} */}
-            {getSkeletons(view)}
+            ))}
+            {isLoading && getSkeletons(view)}
           </HStack>
         }
       />

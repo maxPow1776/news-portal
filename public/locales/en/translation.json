@@ -54,5 +54,7 @@
   "old": "Old",
   "userSettings": "User settings",
   "settings": "Settings",
-  "interfaceVariant": "Interface variant"
+  "interfaceVariant": "Interface variant",
+  "{{count}} view_one": "{{count}} view",
+  "{{count}} view_other": "{{count}} views"
 }

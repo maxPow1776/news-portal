@@ -1,10 +1,12 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/Stack';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/Text';
 
 export interface CommentListProps {
   className?: string;
@@ -30,7 +32,11 @@ export const CommentList = memo(({ className, comments, isLoading }: CommentList
       {comments?.length ? (
         comments.map((comment) => <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />)
       ) : (
-        <Text text={t('noComments')} />
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          off={<TextDeprecated text={t('noComments')} />}
+          on={<Text text={t('noComments')} />}
+        />
       )}
     </VStack>
   );

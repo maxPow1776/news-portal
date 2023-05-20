@@ -11,6 +11,7 @@ import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 export interface UiDesignSwitcherProps {
   className?: string;
@@ -22,6 +23,7 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
   const [isLoading, setIsLoading] = useState(false);
+  const forceUpdate = useForceUpdate();
 
   const items = [
     { content: t('new'), value: 'new' },
@@ -37,6 +39,7 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
           newFeatures: { isAppRedesigned: value === 'new' },
         }),
       ).unwrap();
+      forceUpdate();
     }
   };
 

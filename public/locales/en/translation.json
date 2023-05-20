@@ -49,5 +49,10 @@
   "leaveYourFeedback": "Leave your feedback",
   "thankYouForRating": "Thank you for rating!",
   "welcomeToThePage": "Welcome to the page",
-  "hereYouCanSearchAndViewArticlesOnVariousTopics": "Here you can search and view articles on various topics"
+  "hereYouCanSearchAndViewArticlesOnVariousTopics": "Here you can search and view articles on various topics",
+  "new": "New",
+  "old": "Old",
+  "userSettings": "User settings",
+  "settings": "Settings",
+  "interfaceVariant": "Interface variant"
 }

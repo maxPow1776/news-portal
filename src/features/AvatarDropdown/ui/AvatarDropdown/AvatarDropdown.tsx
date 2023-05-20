@@ -6,7 +6,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
-import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile, getRouteSettings } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -34,6 +34,7 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
 
   const items = [
     ...(isAdminPanelAvailable ? [{ content: t('adminPanel'), href: getRouteAdminPanel() }] : []),
+    { content: t('settings'), href: getRouteSettings() },
     { content: t('profile', { ns: 'profile' }), href: getRouteProfile(authData.id) },
     { content: t('logOut'), onClick: onLogout },
   ];

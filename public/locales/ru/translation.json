@@ -49,5 +49,10 @@
   "leaveYourFeedback": "Оставьте свой отзыв",
   "thankYouForRating": "Спасибо за оценку!",
   "welcomeToThePage": "Добро пожаловать на страницу",
-  "hereYouCanSearchAndViewArticlesOnVariousTopics": "Здесь вы можете искать и просматривать статьи на различные темы"
+  "hereYouCanSearchAndViewArticlesOnVariousTopics": "Здесь вы можете искать и просматривать статьи на различные темы",
+  "new": "Новый",
+  "old": "Старый",
+  "userSettings": "Настройки пользователя",
+  "settings": "Настройки",
+  "interfaceVariant": "Вариант интерфейса"
 }

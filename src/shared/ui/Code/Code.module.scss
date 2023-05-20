@@ -2,8 +2,17 @@
   border: 1px solid var(--primary-color);
   padding: 20px;
   position: relative;
-  background: var(--code-background);
+  background: var(--code-bg);
   overflow: auto;
+}
+
+.codeRedesigned {
+  padding: 20px;
+  position: relative;
+  background: var(--light-bg-redesigned);
+  overflow: auto;
+  border: 1px solid var(--accent-redesigned);
+  border-radius: 16px;
 }
 
 .copyButton {

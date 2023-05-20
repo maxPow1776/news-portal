@@ -6,7 +6,7 @@ export interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   errorFallback?: ReactElement;
 }
 
-export const AppImage = memo(({ src, alt = '', fallback, errorFallback, className, ...otherProps }: AppImageProps) => {
+export const AppImage = memo(({ className, src, alt = '', fallback, errorFallback, ...otherProps }: AppImageProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
@@ -30,5 +30,5 @@ export const AppImage = memo(({ src, alt = '', fallback, errorFallback, classNam
     return fallback;
   }
 
-  return <img {...otherProps} src={src} alt={alt} className={className} />;
+  return <img className={className} src={src} alt={alt} {...otherProps} />;
 });

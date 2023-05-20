@@ -34,7 +34,7 @@ export const ArticleListItemRedesigned = memo(
     const views = (
       <HStack gap="8">
         <Icon Svg={EyeIcon} />
-        <Text className={classes.views} text={String(article.views)} />
+        <Text text={String(article.views)} />
       </HStack>
     );
 
@@ -80,9 +80,9 @@ export const ArticleListItemRedesigned = memo(
         target={target}
         to={getRouteArticleDetails(article.id)}
         className={classNames('', {}, [className, classes[view]])}>
-        <Card className={classes.card} border="round">
+        <Card className={classes.card} border="round" padding="0">
           <AppImage
-            fallback={<Skeleton width={200} height={200} />}
+            fallback={<Skeleton width="100%" height={200} />}
             alt={article.title}
             src={article.img}
             className={classes.img}
@@ -94,7 +94,9 @@ export const ArticleListItemRedesigned = memo(
                 <Text text={article.createdAt} className={classes.date} />
                 {views}
               </HStack>
-              <HStack gap="4">{userInfo}</HStack>
+              <HStack className={classes.avatar} gap="4">
+                {userInfo}
+              </HStack>
             </VStack>
           </VStack>
         </Card>

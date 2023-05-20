@@ -30,10 +30,10 @@ export const Avatar = ({ className, src, size = 100, alt }: AvatarProps) => {
     <AppImage
       errorFallback={errorFallback}
       fallback={fallback}
-      className={classNames(classes.avatar, {}, [className])}
       src={src}
       alt={alt}
       style={styles}
+      className={classNames(classes.avatar, {}, [className])}
     />
   );
 };

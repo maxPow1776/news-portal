@@ -52,10 +52,8 @@ export const ListBox = <T extends string>({
         className={classNames(classes.listbox, {}, [className, popupClasses.popup])}
         value={value}
         onChange={onChange}>
-        <HListBox.Button disabled={readonly} className={classes.trigger}>
-          <Button variant="filled" disabled={readonly} addonRight={<Icon Svg={ArrowIcon} />}>
-            {t(`${selectedItem?.value}`) ?? defaultValue}
-          </Button>
+        <HListBox.Button as={Button} disabled={readonly} variant="filled" addonRight={<Icon Svg={ArrowIcon} />}>
+          {t(`${selectedItem?.value}`) ?? defaultValue}
         </HListBox.Button>
         <HListBox.Options className={classNames(classes.options, {}, optionsClasses)}>
           {items?.map((item) => (

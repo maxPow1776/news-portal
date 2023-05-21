@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
+import { ButtonHTMLAttributes, ForwardedRef, forwardRef, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import classes from './Button.module.scss';
 
@@ -20,20 +20,23 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   addonRight?: ReactNode;
 }
 
-export const Button = memo(
-  ({
-    className,
-    children,
-    variant = 'outline',
-    square,
-    size = 'm',
-    disabled,
-    fullWidth,
-    addonLeft,
-    addonRight,
-    color = 'normal',
-    ...otherProps
-  }: ButtonProps) => {
+export const Button = forwardRef(
+  (
+    {
+      className,
+      children,
+      variant = 'outline',
+      square,
+      size = 'm',
+      disabled,
+      fullWidth,
+      addonLeft,
+      addonRight,
+      color = 'normal',
+      ...otherProps
+    }: ButtonProps,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) => {
     const mods: Mods = {
       [classes.square]: square,
       [classes.disabled]: disabled,
@@ -44,6 +47,7 @@ export const Button = memo(
     return (
       <button
         {...otherProps}
+        ref={ref}
         type="button"
         disabled={disabled}
         className={classNames(classes.button, mods, [className, classes[variant], classes[size], classes[color]])}>

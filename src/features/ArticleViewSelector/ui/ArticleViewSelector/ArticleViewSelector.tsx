@@ -65,6 +65,7 @@ export const ArticleViewSelector = memo(({ className, view, onViewClick }: Artic
           <HStack gap="8">
             {viewTypes.map((viewType) => (
               <Icon
+                key={viewType.view}
                 Svg={viewType.icon}
                 width={24}
                 height={24}

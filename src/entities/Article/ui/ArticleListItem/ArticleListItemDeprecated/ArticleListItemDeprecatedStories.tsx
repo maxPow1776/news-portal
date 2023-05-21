@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleBlockType, ArticleType, ArticleView } from '../../../model/consts/consts';
 import { Article } from '../../../model/types/article';

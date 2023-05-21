@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import AvatarImg from '../../assets/test/testAvatar.png';
+import AvatarImg from '../../../assets/test/testAvatar.png';
 
 import { Avatar } from './Avatar';
 
 export default {
-  title: 'shared/Avatar',
+  title: 'shared/deprecated/Avatar',
   component: Avatar,
   argTypes: {
     backgroundColor: { control: 'color' },

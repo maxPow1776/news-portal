@@ -6,7 +6,7 @@ import { Dropdown } from './Dropdown';
 const items = [{ content: 'first' }, { content: 'second' }, { content: 'third' }];
 
 export default {
-  title: 'shared/Popups/Dropdown',
+  title: 'shared/deprecated/Popups/Dropdown',
   component: Dropdown,
   argTypes: {
     backgroundColor: { control: 'color' },

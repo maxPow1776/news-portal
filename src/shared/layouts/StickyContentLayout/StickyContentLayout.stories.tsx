@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { StickyContentLayout } from './StickyContentLayout';
 
 export default {
-  title: 'StickyContentLayout',
+  title: 'shared/layouts/StickyContentLayout',
   component: StickyContentLayout,
   argTypes: {
     backgroundColor: { control: 'color' },

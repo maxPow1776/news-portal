@@ -9,7 +9,7 @@ const items = [
 ];
 
 export default {
-  title: 'shared/Popups/ListBox',
+  title: 'shared/deprecated/Popups/ListBox',
   component: ListBox,
   argTypes: {
     backgroundColor: { control: 'color' },

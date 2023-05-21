@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import SettingsPage from './SettingsPage';
 
 export default {
-  title: 'SettingsPage',
+  title: 'pages/SettingsPage',
   component: SettingsPage,
   argTypes: {
     backgroundColor: { control: 'color' },

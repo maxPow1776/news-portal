@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { MainLayout } from './MainLayout';
 
 export default {
-  title: 'MainLayout',
+  title: 'shared/layouts/MainLayout',
   component: MainLayout,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Loader } from './Loader';
 
 export default {
-  title: 'shared/Loader',
+  title: 'shared/deprecated/Loader',
   component: Loader,
   argTypes: {
     backgroundColor: { control: 'color' },

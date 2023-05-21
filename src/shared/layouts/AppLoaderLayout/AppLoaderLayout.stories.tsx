@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { AppLoaderLayout } from './AppLoaderLayout';
 
 export default {
-  title: 'AppLoaderLayout',
+  title: 'shared/layouts/AppLoaderLayout',
   component: AppLoaderLayout,
   argTypes: {
     backgroundColor: { control: 'color' },

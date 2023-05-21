@@ -19,7 +19,7 @@ const tabs = [
 ];
 
 export default {
-  title: 'shared/Tabs',
+  title: 'shared/deprecated/Tabs',
   component: Tabs,
   argTypes: {
     backgroundColor: { control: 'color' },

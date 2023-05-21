@@ -19,7 +19,7 @@ export interface UiDesignSwitcherProps {
 
 export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
   const { t } = useTranslation();
-  const isAppRedisigned = getFeatureFlag('isAppRedesigned');
+  const isAppRedesigned = getFeatureFlag('isAppRedesigned');
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
   const [isLoading, setIsLoading] = useState(false);
@@ -55,7 +55,7 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
             <ListBoxDeprecated
               onChange={onChange}
               items={items}
-              value={isAppRedisigned ? 'new' : 'old'}
+              value={isAppRedesigned ? 'new' : 'old'}
               className={className}
             />
           )}
@@ -67,7 +67,7 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
           {isLoading ? (
             <Skeleton width={100} height={32} border="34px" />
           ) : (
-            <ListBox onChange={onChange} items={items} value={isAppRedisigned ? 'new' : 'old'} className={className} />
+            <ListBox onChange={onChange} items={items} value={isAppRedesigned ? 'new' : 'old'} className={className} />
           )}
         </HStack>
       }

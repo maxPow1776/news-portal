@@ -1,10 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 import { ProfileCardRedesigned } from './ProfileCardRedesigned';
 
 export default {
-  title: 'ProfileCardRedesigned',
+  title: 'entities/Profile/ProfileCardRedesigned',
   component: ProfileCardRedesigned,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,4 +14,3 @@ const Template: ComponentStory<typeof ProfileCardRedesigned> = (args) => <Profil
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({})];

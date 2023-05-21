@@ -1,12 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 import { AppImage } from './AppImage';
-import { Theme } from '@/shared/const/theme';
 
 export default {
-  title: 'AppImage',
+  title: 'shared/AppImage',
   component: AppImage,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -21,4 +19,3 @@ Primary.decorators = [StoreDecorator({})];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

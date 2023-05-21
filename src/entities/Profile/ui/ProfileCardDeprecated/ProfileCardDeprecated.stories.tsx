@@ -1,10 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 import { ProfileCardDeprecated } from './ProfileCardDeprecated';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator';
 
 export default {
-  title: 'ProfileCardDeprecated',
+  title: 'entities/Profile/deprecated/ProfileCardDeprecated',
   component: ProfileCardDeprecated,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,4 +16,4 @@ const Template: ComponentStory<typeof ProfileCardDeprecated> = (args) => <Profil
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
+Primary.decorators = [ThemeDecorator({ isAppRedesigned: false }), FeatureFlagsDecorator({ isAppRedesigned: false })];

@@ -14,8 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+const args = {
   data: {
     first: 'first',
     lastname: 'lastname',
@@ -24,9 +23,13 @@ Primary.args = {
     username: 'username',
     city: 'city',
     currency: Currency.RUB,
-    avatar: 'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png',
+    avatar:
+      'https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png',
   },
 };
+
+export const Primary = Template.bind({});
+Primary.args = args;
 
 export const WithError = Template.bind({});
 WithError.args = {

@@ -1,10 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 import { ArticleAdditionalInfo } from './ArticleAdditionalInfo';
 
 export default {
-  title: 'ArticleAdditionalInfo',
+  title: 'widgets/ArticleAdditionalInfo',
   component: ArticleAdditionalInfo,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -14,5 +13,12 @@ export default {
 const Template: ComponentStory<typeof ArticleAdditionalInfo> = (args) => <ArticleAdditionalInfo {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
+Primary.args = {
+  author: {
+    id: '1',
+    avatar: '',
+    username: 'username',
+  },
+  createdAt: '12.12.12',
+  views: 110,
+};

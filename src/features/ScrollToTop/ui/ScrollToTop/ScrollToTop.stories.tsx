@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ScrollToTop } from './ScrollToTop';
 
 export default {
-  title: 'ScrollToTop',
+  title: 'features/ScrollToTop',
   component: ScrollToTop,
   argTypes: {
     backgroundColor: { control: 'color' },

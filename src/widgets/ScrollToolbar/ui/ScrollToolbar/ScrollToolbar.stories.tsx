@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ScrollToolbar } from './ScrollToolbar';
 
 export default {
-  title: 'ScrollToolbar',
+  title: 'widgets/ScrollToolbar',
   component: ScrollToolbar,
   argTypes: {
     backgroundColor: { control: 'color' },

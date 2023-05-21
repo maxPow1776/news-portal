@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { Popover } from './Popover';
 
 export default {
-  title: 'shared/Popups/Popover',
+  title: 'shared/deprecated/Popups/Popover',
   component: Popover,
   argTypes: {
     backgroundColor: { control: 'color' },
